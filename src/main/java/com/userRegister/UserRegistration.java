@@ -36,4 +36,24 @@ public class UserRegistration {
         }
         return false;
     }
+
+    public boolean checkEmailAddres(String emailAdd) {
+        String emailPattern="^[a-z0-9]+[.+_\\-]?[0-9a-z]+@[a-z0-9]+\\.[a-z]{2,4}([.][a-z]{2,3})?$";
+        Pattern pattern=Pattern.compile(emailPattern);
+        Matcher matcher=pattern.matcher(emailAdd);
+        if(matcher.matches()){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean checkPassword(String password) {
+        String passwordPattern="((?=.*[a-z])(?=.*\\d)(?=.*[A-Z])(?=.*[@#$%!]).{8,40})";
+        Pattern pattern=Pattern.compile(passwordPattern);
+        Matcher matcher=pattern.matcher(password);
+        if(matcher.matches()){
+            return true;
+        }
+        return false;
+    }
 }
