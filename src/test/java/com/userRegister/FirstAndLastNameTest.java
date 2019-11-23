@@ -3,7 +3,7 @@ package com.userRegister;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class UserRegistrationTest {
+public class FirstAndLastNameTest {
     UserRegistration registration = new UserRegistration();
 
     @Test
@@ -62,6 +62,7 @@ public class UserRegistrationTest {
         boolean isFalse=registration.checkLastName(" ");
         Assert.assertFalse(isFalse);
     }
+
 
 
 }

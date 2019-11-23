@@ -16,6 +16,17 @@ public class UserRegistration {
         
     }
 
+    public boolean checkMobileNumber(String mobileNumber) {
+        String mobileNumberPattern="^[0-9]{2,2}[ ][7-9]{1,1}[0-9]{9}";
+        Pattern pattern=Pattern.compile(mobileNumberPattern);
+        Matcher matcher=pattern.matcher(mobileNumber);
+        if(matcher.matches()){
+            return true;
+        }
+        return false;
+
+    }
+
     public boolean checkLastName(String lastName) {
         String lastNamePattern="^[A-Z]+[a-z]{3,}$";
         Pattern pattern=Pattern.compile(lastNamePattern);
@@ -25,6 +36,4 @@ public class UserRegistration {
         }
         return false;
     }
-
-
 }
